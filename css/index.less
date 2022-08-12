@@ -1,0 +1,124 @@
+@column-width: 320px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  background-image: url(../images/main-bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+@font-face {
+  font-family: zihun100;
+  src: url("../font/zihun100.ttf");
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 15px 20px;
+  margin-bottom: 50px;
+  img {
+    height: 100%;
+  }
+  @media only screen and (max-width: @column-width * 3) {
+    margin-bottom: 20px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  @media only screen and (max-width: @column-width * 3) {
+    display: block;
+  }
+
+  .column {
+    width: @column-width;
+    @media only screen and (max-width: @column-width * 3) {
+      margin: 0 auto;
+    }
+  }
+
+  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .block {
+    border-radius: 20px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .1);
+    }
+
+    .content {
+      position: absolute;
+      bottom: 5px;
+      font-size: 24px;
+      font-family: zihun100;
+
+      &-right {
+        right: 8%;
+      }
+
+      @media only screen and (max-width: @column-width * 3) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .block-1x1 {
+    height: 145px;
+    width: 150px;
+
+    > img {
+      height: 50px;
+    }
+  }
+
+  .block-2x1 {
+    height: 145px;
+    width: 300px;
+
+    > img {
+      height: 60px;
+    }
+
+    &-container {
+      display: flex;
+      margin: 10px;
+      & > * {
+        flex: 1;
+      }
+    }
+  }
+
+  .block-2x2 {
+    height: 300px;
+    width: 300px;
+
+    > img {
+      height: 180px;
+    }
+    @media only screen and (max-width: @column-width * 3) {
+      .block-2x1
+    }
+  }
+}
